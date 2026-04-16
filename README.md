@@ -71,5 +71,5 @@ pip install trimesh numpy vtk meshoptimizer open3d dracopy
 ```
 3. Run any specialized script on a target `.ply` model:
 ```bash
-python scripts/advanced_compression.py "data/original_meshes/0609_06_mesh_1.ply"
+python scripts/draco_open3d_compression.py "data/original_meshes/0609_06_mesh_1.ply"
 ```

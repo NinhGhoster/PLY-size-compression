@@ -65,11 +65,26 @@ To replicate these benchmark compressions on your own models using the provided 
 python3 -m venv venv
 source venv/bin/activate
 ```
-2. Install the necessary geometry processing dependencies:
-```bash
-pip install trimesh numpy vtk meshoptimizer open3d dracopy
-```
-3. Run any specialized script on a target `.ply` model:
+2. Install only the dependencies for the specific method you want to use (to save space and avoid bloat):
+
+*   **For Draco or Open3D Compression** (`draco_open3d_compression.py` or `basic_open3d_compression.py`):
+    ```bash
+    pip install open3d dracopy meshio
+    ```
+*   **For Precision Trimming or Benchmarks** (`precision_trim_compression.py` or `benchmark_all_methods.py`):
+    ```bash
+    pip install trimesh numpy meshoptimizer
+    ```
+*   **For VTK Native formats** (`vtk_compression.py`):
+    ```bash
+    pip install vtk
+    ```
+*   **For MeshLab Native formats** (`meshlab_compression.py`):
+    ```bash
+    pip install pymeshlab
+    ```
+
+3. Run the specialized script on a target `.ply` model:
 ```bash
 python scripts/draco_open3d_compression.py "data/original_meshes/0609_06_mesh_1.ply"
 ```
